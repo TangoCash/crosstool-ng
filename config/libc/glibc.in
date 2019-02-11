@@ -54,15 +54,15 @@ config CC_GLIBC_SHOW_LINARO
     help
       Linaro is maintaining some advanced/more stable/experimental versions
       of glibc, especially for the ARM architecture.
-      
+
       Those versions have not been blessed by the glibc comunity (nor have they
       been cursed either!), but they look to be pretty much stable, and even
       more stable than the upstream versions. YMMV...
-      
+
       If you do not know what this Linaro stuff is, then simply say 'n' here,
       and rest in peace. OTOH, if you know what you are doing, you will be
       able to use and enjoy :-) the Linaro versions by saying 'y' here.
-      
+
       Linaro: http://www.linaro.org/
 
 # GLIBC and kernel are special when it comes to obsoletion. Users
@@ -84,7 +84,7 @@ config LIBC_GLIBC_V_2_28
 
 config LIBC_GLIBC_V_2_27
     bool
-    prompt "2.27"
+    prompt "2.27 (EXPERIMENTAL)"
     depends on EXPERIMENTAL
     select LIBC_GLIBC_2_23_or_later
 
