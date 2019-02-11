@@ -78,6 +78,13 @@ config CC_GCC_V_7_1_0
     prompt "7.1.0"
     select CC_GCC_7
 
+config CC_GCC_V_linaro_7_3
+    bool
+    prompt "linaro-7.3-2018.05"
+    depends on CC_GCC_SHOW_LINARO
+    depends on EXPERIMENTAL
+    select CC_GCC_7
+
 config CC_GCC_V_linaro_6_4
     bool
     prompt "linaro-6.4-2018.05"
@@ -203,6 +210,8 @@ config CC_GCC_VERSION
 # Don't remove next line
 # CT_INSERT_VERSION_STRING_BELOW
     default "7.1.0" if CC_GCC_V_7_1_0
+    default "linaro-7.3-2018.05" if CC_GCC_V_linaro_7_3
+    default "7.3.0" if CC_GCC_V_7_3_0
     default "linaro-6.4-2018.05" if CC_GCC_V_linaro_6_4
     default "6.4.0" if CC_GCC_V_6_4_0
     default "linaro-6.3-2017.05" if CC_GCC_V_linaro_6_3
