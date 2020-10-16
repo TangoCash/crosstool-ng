@@ -1,7 +1,10 @@
-diff -urpN zlib-1.2.11.orig/win32/Makefile.gcc zlib-1.2.11/win32/Makefile.gcc
---- zlib-1.2.11.orig/win32/Makefile.gcc	2017-05-23 18:52:07.937730080 -0700
-+++ zlib-1.2.11/win32/Makefile.gcc	2017-05-23 19:02:24.068666463 -0700
-@@ -71,7 +71,11 @@ OBJS = adler32.o compress.o crc32.o defl
+---
+ win32/Makefile.gcc |    8 ++++++--
+ 1 file changed, 6 insertions(+), 2 deletions(-)
+
+--- a/win32/Makefile.gcc
++++ b/win32/Makefile.gcc
+@@ -71,7 +71,11 @@
         gzwrite.o infback.o inffast.o inflate.o inftrees.o trees.o uncompr.o zutil.o
  OBJA =
  
@@ -14,7 +17,7 @@ diff -urpN zlib-1.2.11.orig/win32/Makefile.gcc zlib-1.2.11/win32/Makefile.gcc
  
  test: example.exe minigzip.exe
  	./example
-@@ -125,7 +129,7 @@ zlibrc.o: win32/zlib1.rc
+@@ -125,7 +129,7 @@
  .PHONY: install uninstall clean
  
  install: zlib.h zconf.h $(STATICLIB) $(IMPLIB)
