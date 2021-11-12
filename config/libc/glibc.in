@@ -76,6 +76,18 @@ choice
 # Don't remove next line
 # CT_INSERT_VERSION_BELOW
 
+config LIBC_GLIBC_V_2_34
+    bool
+    prompt "2.34 (EXPERIMENTAL)"
+    depends on EXPERIMENTAL
+    select LIBC_GLIBC_2_23_or_later
+
+config LIBC_GLIBC_V_2_33
+    bool
+    prompt "2.33 (EXPERIMENTAL)"
+    depends on EXPERIMENTAL
+    select LIBC_GLIBC_2_23_or_later
+
 config LIBC_GLIBC_V_2_32
     bool
     prompt "2.32 (EXPERIMENTAL)"
@@ -242,6 +254,8 @@ config LIBC_VERSION
     string
 # Don't remove next line
 # CT_INSERT_VERSION_STRING_BELOW
+    default "2.34" if LIBC_GLIBC_V_2_34
+    default "2.33" if LIBC_GLIBC_V_2_33
     default "2.32" if LIBC_GLIBC_V_2_32
     default "2.31" if LIBC_GLIBC_V_2_31
     default "2.30" if LIBC_GLIBC_V_2_30
