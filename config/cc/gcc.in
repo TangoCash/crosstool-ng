@@ -73,6 +73,11 @@ choice
 # Don't remove next line
 # CT_INSERT_VERSION_BELOW
 
+config CC_GCC_V_11_2_0
+    bool
+    prompt "11.2.0"
+    select CC_GCC_7
+
 config CC_GCC_V_10_2_0
     bool
     prompt "10.2.0"
@@ -254,6 +259,7 @@ config CC_GCC_VERSION
     string
 # Don't remove next line
 # CT_INSERT_VERSION_STRING_BELOW
+    default "11.2.0" if CC_GCC_V_11_2_0
     default "10.2.0" if CC_GCC_V_10_2_0
     default "9.2.0" if CC_GCC_V_9_2_0
     default "8.2.0" if CC_GCC_V_8_2_0
